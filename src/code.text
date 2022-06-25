@@ -1,0 +1,34 @@
+<div className="search">
+          <input
+            value={searchWord}
+            onChange={(e) => setSearchWord(e.target.value)}
+            placeholder="Search for movies"
+          />
+          <img
+            src={SearchIcon}
+            alt="search"
+            onClick={() => fetchImages(searchWord)}
+          />
+        </div>
+
+        {imageUrls?.length > 0 ? (
+          <div className="container">
+            {imageUrls.map((url) => (
+              <ImageCard imageUrl={url} />
+            ))}
+          </div>
+        ) : (
+          <div className="empty">
+            <h2>No movies found</h2>
+          </div>
+        )}
+     
+
+      <div className="search">
+        <input
+          value={searchWord}
+          onChange={(e) => setSearchWord(e.target.value)}
+          placeholder="Search for an image"
+        />
+      </div>
+    
